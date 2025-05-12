@@ -1,0 +1,26 @@
+{
+  "name": "message-board-solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "cross-env MESSAGE_BOARD_ENV=local node --watch index.mjs",
+    "test": "run-p test:unit test:integration",
+    "test:unit": "cross-env MESSAGE_BOARD_ENV=\"unit\" node --watch --test",
+    "test:integration": "cross-env MESSAGE_BOARD_ENV=\"integration\" node --watch --test **/*.test.integration.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "mongodb": "^6.16.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "mongodb-memory-server": "^10.1.4",
+    "npm-run-all": "^4.1.5",
+    "supertest": "^7.1.0"
+  }
+}

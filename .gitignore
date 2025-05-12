@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+node_modules/.cache/
+
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Spotlight files
+.Spotlight-V100
+.Trashes
