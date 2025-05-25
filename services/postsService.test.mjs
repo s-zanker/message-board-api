@@ -163,7 +163,7 @@ describe('postsService', () => {
 
     it('can deal with deletions', async () => {
       // arrange / act
-      postsService.remove(insertManyResults.insertedIds[0].toHexString());
+      await postsService.remove(insertManyResults.insertedIds[0].toHexString());
       const id = await postsService.create(newPost);
       const post = await postsService.findById(id);
 

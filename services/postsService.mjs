@@ -12,7 +12,7 @@ export const postsService = {
     //methoden syntax -> alternative arrow syntax: findAll: async () => {}
     const posts = await getPostsCollection();
     const result = await posts.find({}).toArray();
-    /*  console.log(JSON.stringify(result, null, 2)); */
+    console.log(JSON.stringify(result, null, 2));
     return result;
   },
   async findById(id) {

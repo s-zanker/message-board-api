@@ -33,7 +33,9 @@ describe('/api/v1/posts', () => {
     //my clientService used
     const config = await getConfig();
 
-    const { database, client } = await getClientPromise();
+    const clientServiceResult = await getClientPromise();
+    client = clientServiceResult.client;
+    const database = clientServiceResult.database;
     console.log(
       'MongoClient connected:',
       client.topology?.isConnected?.() ?? 'unknown'

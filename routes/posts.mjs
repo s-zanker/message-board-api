@@ -24,7 +24,7 @@ postsRouter.post('/', async (req, res) => {
   const newPost = req.body;
   const id = await postsService.create(newPost);
 
-  res.status(201).json({ id }); //sending an json object { id: id }
+  res.status(201).json({ _id: id }); //sending an json object
 });
 //update
 postsRouter.put('/:id', async (req, res) => {
@@ -35,7 +35,7 @@ postsRouter.put('/:id', async (req, res) => {
     res.status(404).send({ message: 'post not found for update' });
     return;
   }
-  res.send({ id }); //sending JS Object, best practice für REST-APIs after create and update
+  res.json({ _id: id }); //sending JS Object, best practice für REST-APIs after create and update
 });
 //delete
 postsRouter.delete('/:id', async (req, res) => {
